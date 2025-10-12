@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function Player({ Initialname, symbol }) {
+export default function Player({ Initialname, symbol, isActive }) {
     const [playerName, setPlayerName] = useState(Initialname);
     const [isEditing, setIsEditing] = useState(false);
 
@@ -20,7 +20,7 @@ setPlayerName(event.target.value);
         //btnCaption = 'Save';
     }
     return (
-        <li>
+        <li className={isActive ? 'active' : ''}>
             <span className="player">
                 {editablePlayerName}
                 <span className="player-symbol">{symbol}</span>
